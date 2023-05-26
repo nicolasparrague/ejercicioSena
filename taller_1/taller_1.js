@@ -172,3 +172,5 @@ function notas() {
     alert("esa nota no es valida");
   }
 }
+
+
