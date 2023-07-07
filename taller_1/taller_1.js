@@ -94,15 +94,15 @@ function calculoSalario() {
     const totalNeto = salario + valorHoraExtra;
     alert(`el valor de su hora extra seria de: ${valorHoraExtra}`);
     alert(`su salario neto seria: ${totalNeto}`);
-  } else (salario >= 1475434)
+  } else if (salario >= 1475434) { 
   const valorHoraExtra = 12908 * horasExtras;
   const totalNeto = salario + valorHoraExtra;
   alert(`el valor de su hora extra seria de: ${valorHoraExtra}`);
   alert(`su salario neto seria: ${totalNeto}`);
-
+  }
 }
 function ingresoMensual() {
-  const ingreso = parseInt(prompt("ingrese su sueldo:"));
+  const ingreso = parseFloat(prompt("ingrese su sueldo:"));
   let mes = parseInt(prompt("insert el numero de mes (1 - 3):"));
   const sueldoMes1 = ingreso + (ingreso * 0.3);
   const sueldoMes2 = sueldoMes1 + (sueldoMes1 * 0.4);
@@ -114,28 +114,19 @@ function ingresoMensual() {
   };
   alert(`su sueldo es: ${valores[mes]}`);
 }
-
-
 function calculo() {
-  const libra = parseInt(prompt("ingrese cantidad de libras:"));
+  const libra = parseFloat(prompt("ingrese cantidad de libras:"));
   const medida = (prompt("ingrese unidad de medida:"));
-  switch (libra, medida) {
-    case kilos = libra * 0.45:
-    case "kilos":
-      alert(`el total en kilos seria de: ${kilos}`);
-      break;
-    case arroba = libra / 25:
-    case "arroba":
-      alert(`el total en arrobas seria de: ${arroba}`);
-      break;
-    case tonelada = libra * 0.000453592:
-    case "tonelada":
-      alert(`el total en toneladas seria de: ${tonelada}`);
-      break;
-    default:
-      alert(libra);
-      break;
+  const kilo = libra * 0.453592;
+  const arroba = libra / 25;
+  const tonelada = libra * 0.000453592;
+  const tipo = {
+    "kilos": `el total en kilos seria de ${kilo}`,
+    "arrobas": `el total en arrobas seria de ${arroba}`,
+    "toneladas": `el total en toneladas seria de ${tonelada}`,
+    default: libra
   }
+  alert(tipo[medida]);
 }
 function medidaRuedas() {
   const diametro = parseFloat(prompt("calcule diametro de una rueda:"));
@@ -155,7 +146,7 @@ function MedidaGrosorDiametro() {
   }
 }
 function notas() {
-  const nota = parseInt(prompt("resultado notas:"));
+  const nota = parseFloat(prompt("resultado notas:"));
   if (nota >= 1.0 && nota <= 2.9) {
     alert("PIERDE");
   } else if (nota >= 3.0 && nota <= 4.9) {
