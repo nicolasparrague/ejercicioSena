@@ -7,79 +7,84 @@ function tutela() {
     alert("Derecho de petición artículo 23");
   } else {
     alert("articulo no existente");
-  }   
-} 
+  }
+}
 function descuento() {
   const valorCompra = parseInt(prompt("valor compra:"));
   if (valorCompra > 7000) {
-    const totalDescuento = valorCompra * 25 / 100;
-    total = valorCompra - totalDescuento;
-    alert(`el total de su compra aplicando el descuento seria: ${totaldescuento}`);
-  }
-  else {
+    const totalDescuento = valorCompra * (25 / 100);
+    alert(`el total de su compra aplicando el descuento seria: ${totalDescuento}`);
+  } else {
     alert("no recibe descuento");
   }
-} 
+}
 function tramites() {
   const peticionDelUsuario = parseInt(prompt("solicitud tramite para tutelas:"));
-  if (peticionDelUsuario == 10) {
-      alert("petición en curso"); 
-  }
-  if (peticionDelUsuario == 15) {
-      alert("solicitud de copias");
-  } 
-  if (peticionDelUsuario == 30) {
+  switch (peticionDelUsuario) {
+    case 10:
+      alert("petición en curso");
+      break;
+    case 15:
       alert("consultas");
-  } else {
+      break;
+    case 30:
       alert("día no correspondiente al trámite del derecho de petición");
-  }   
+      break
+    default:
+      alert("día no correspondiente al trámite del derecho de petición");
+      break
+  }
 }
 function derechoDePeticion() {
   const peticionDelUsuario = parseInt(prompt("solicitud tramite para derecho de peticion:"));
-  if (peticionDelUsuario == 1) {
+  switch (peticionDelUsuario) {
+    case 1:
       alert("reconocimiento a un derecho");
-  }
-  if (peticionDelUsuario == 2) {
+      break;
+    case 2:
       alert("la intervención de una entidad o funcionario");
-  } 
-  if (peticionDelUsuario == 3) {
+      break;
+    case 3:
       alert("la resolución de una situación jurídica");
-  } 
-  if (peticionDelUsuario == 4) {
+      break;
+    case 4:
       alert("la prestación de un servicio");
-  }
-  if (peticionDelUsuario == 5) {
+      break;
+    case 5:
       alert("requerir información");
-  } 
-  if (peticionDelUsuario == 6) {
+      break;
+    case 6:
       alert("consultar, examinar y requerir copias de documento");
-  } 
-  if (peticionDelUsuario == 7) {
+      break;
+    case 7:
       alert("formular consultas, quejas y reclamos");
-  }
-  if (peticionDelUsuario == 8) {
+      break;
+    case 8:
       alert("interponer reclamos");
-  } else {
-      alert("no se puede evaluar el derecho de petición"); 
-  }    
+      break;
+    default: alert("no se puede evaluar el derecho de petición");
+      break;
+  }
 }
 function tanqueDeAgua() {
   const Cantidad = (prompt("cantidad de agua:"));
-  if (Cantidad == "1/5") {
+  switch (Cantidad) {
+    case "1/5":
       alert("50lt");
-  }
-  if (Cantidad == "2/5") {
+      break;
+    case "2/5":
       alert("100lt");
-  } 
-  if (Cantidad == "3/5") {
+      break;
+    case "3/5":
       alert("150lt");
-  }
-  if (Cantidad == "4/5") {
+      break;
+    case "4/5":
       alert("200lt");
-  } 
-  if (Cantidad == "5/5") {
+      break;
+    case "5/5":
       alert("250lt");
-  } 
+      break;
+  }
 }
 function calculoSalario() {
   const salario = parseInt(prompt("ingrese su sueldo:"));
@@ -89,64 +94,47 @@ function calculoSalario() {
     const totalNeto = salario + valorHoraExtra;
     alert(`el valor de su hora extra seria de: ${valorHoraExtra}`);
     alert(`su salario neto seria: ${totalNeto}`);
-  }
-  if (salario >= 1475434) {
-    const valorHoraExtra = 12908 * horasExtras;
-    const totalNeto = salario + valorHoraExtra;
-    alert(`el valor de su hora extra seria de: ${valorHoraExtra}`);
-    alert(`su salario neto seria: ${totalNeto}`);
-  }
-} 
-function ingresoMensual() {
-  const ingreso = parseInt(prompt("ingrese su sueldo:"));
-  const mes = parseInt(prompt("ingrese mes laborado:"));
-  if (mes == 1) {
-     const sueldo = ingreso+(ingreso*30/100);
-     alert(`su sueldo del primer mes es: ${sueldo}`);
-  }
-  if (mes == 2) {
-      const sueldo1 = ingreso+(ingreso*30/100);
-      alert(`su sueldo del primer mes es: ${sueldo1}`);
-      const sueldo2 = sueldo1+(sueldo1*40/100);
-      alert(`su sueldo del segundo mes es ${sueldo2}`);
-   }
-   if (mes == 3) {
-      const sueldo1 = ingreso+(ingreso*30/100);
-      alert(`su sueldo del primer mes es: ${sueldo1}`);
-      const sueldo2 = sueldo1+(sueldo1*40/100);
-      alert(`su sueldo del segundo mes es ${sueldo2}`);
-      const sueldo3 = sueldo2+(sueldo2*35/100);
-      alert(`su sueldo del segundo mes es ${sueldo3}`);
-   }
-}  
-function calculo() {
-  const libra = parseInt(prompt("ingrese cantidad de libras:"));
-  const medida = (prompt("ingrese unidad de medida:"));
-  if (medida == "kilo") {
-      const libras = libra*0.45;
-      alert(`el total en kilos seria de: ${libras}`);
-  }
-  if (medida == "arroba") {
-    const libras = 25/libra;
-    alert(`el total en arrobas seria de: ${libras}`);
-  }
-  if (medida == "tonelada") {
-    const libras = libra*0.000453592;
-    alert(`el total en toneladas seria de: ${libras}`);
-  }
-  else{
-    alert(libra);
+  } else if (salario >= 1475434) { 
+  const valorHoraExtra = 12908 * horasExtras;
+  const totalNeto = salario + valorHoraExtra;
+  alert(`el valor de su hora extra seria de: ${valorHoraExtra}`);
+  alert(`su salario neto seria: ${totalNeto}`);
   }
 }
+function ingresoMensual() {
+  const ingreso = parseFloat(prompt("ingrese su sueldo:"));
+  let mes = parseInt(prompt("insert el numero de mes (1 - 3):"));
+  const sueldoMes1 = ingreso + (ingreso * 0.3);
+  const sueldoMes2 = sueldoMes1 + (sueldoMes1 * 0.4);
+  const sueldoMes3 = sueldoMes2 + (sueldoMes1 * 0.35);
+  const valores = {
+    1: sueldoMes1,
+    2: sueldoMes2,
+    3: sueldoMes3
+  };
+  alert(`su sueldo es: ${valores[mes]}`);
+}
+function calculo() {
+  const libra = parseFloat(prompt("ingrese cantidad de libras:"));
+  const medida = (prompt("ingrese unidad de medida:"));
+  const kilo = libra * 0.453592;
+  const arroba = libra / 25;
+  const tonelada = libra * 0.000453592;
+  const tipo = {
+    "kilos": `el total en kilos seria de ${kilo}`,
+    "arrobas": `el total en arrobas seria de ${arroba}`,
+    "toneladas": `el total en toneladas seria de ${tonelada}`,
+    default: libra
+  }
+  alert(tipo[medida]);
+}
 function medidaRuedas() {
-  const diametro = parseInt(prompt("calcule diametro de una rueda:"));
+  const diametro = parseFloat(prompt("calcule diametro de una rueda:"));
   if (diametro > 1.4) {
     alert("La rueda es para un vehículo grande");
-  }
-  if (diametro <= 1.4 && diametro > 0.8) {
-    alert("La rueda es para un vehículo mediano”");
-  }
-  else {
+  } else if (diametro <= 1.4 && diametro > 0.8) {
+    alert("La rueda es para un vehículo mediano");
+  } else {
     alert("La rueda es para un vehículo pequeño");
   }
 }
@@ -158,19 +146,14 @@ function MedidaGrosorDiametro() {
   }
 }
 function notas() {
-  const nota = parseInt(prompt("calcule diametro de una rueda:"));
+  const nota = parseFloat(prompt("resultado notas:"));
   if (nota >= 1.0 && nota <= 2.9) {
     alert("PIERDE");
-  }
-  if (nota >= 3.0 && nota <= 4.9) {
+  } else if (nota >= 3.0 && nota <= 4.9) {
     alert("BUENO");
-  }
-  if (nota == 5.0){
+  } else if (nota == 5.0) {
     alert("EXCELENTE");
-  }
-  else{
+  } else {
     alert("esa nota no es valida");
   }
 }
-
-
